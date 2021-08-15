@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Nutserut kal2eng gloss</title>
+
+	<script src="static/jquery.js"></script>
+	<script src="static/bootstrap.js"></script>
+	<script src="static/d3.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/bootstrap.css">
+
+	<link rel="stylesheet" type="text/css" href="static/ui.css">
+	<script src="static/ui.js"></script>
+</head>
+<body>
+<div class="container">
+
+<div style="position: fixed; top: 20px; right: 20px; z-index: 99999;" id="toasts">
+</div>
+
+<div class="row justify-content-center"><div class="col my-3">
+	<h1 id="title">Nutserut kal2eng gloss</h1>
+</div></div>
+
+<form>
+<div class="row justify-content-center">
+<div class="col-sm-10 my-3">
+	<textarea class="form-control form-control-lg" placeholder="Input Greenlandic sentence …" id="input" lang="kl" spellcheck="false"></textarea>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-sm-3 my-3">
+	<button class="form-control form-control-lg btn btn-lg btn-primary" id="btnGloss">Gloss</button>
+</div>
+</div>
+</form>
+
+<span id="output">
+<hr>
+
+<div class="row">
+<div class="col-sm-2 my-3">
+	<a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#tree-3" role="button" aria-expanded="false" aria-controls="txt-0">Toggle post-process gloss (graph)</a>
+</div>
+<div class="col-sm-10 my-3">
+	<div class="collapse" id="tree-3">
+		<div><h3>Post-process gloss (graph)</h3><span id="svg-3"></span></div>
+	</div>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+<div class="col-sm-2 my-3">
+	<a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#txt-3" role="button" aria-expanded="false" aria-controls="txt-0">Toggle post-process gloss (text)</a>
+</div>
+<div class="col-sm-10 my-3">
+	<div class="collapse" id="txt-3">
+		<div><h3>Post-process gloss (text)</h3><code></code></div>
+	</div>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+<div class="col-sm-2 my-3">
+	<a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#tree-2" role="button" aria-expanded="false" aria-controls="txt-0">Toggle dictionary gloss (graph)</a>
+</div>
+<div class="col-sm-10 my-3">
+	<div class="collapse" id="tree-2">
+		<div><h3>Dictionary gloss (graph)</h3><span id="svg-2"></span></div>
+	</div>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+<div class="col-sm-2 my-3">
+	<a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#txt-2" role="button" aria-expanded="false" aria-controls="txt-0">Toggle dictionary gloss (text)</a>
+</div>
+<div class="col-sm-10 my-3">
+	<div class="collapse" id="txt-2">
+		<div><h3>Dictionary gloss (text)</h3><code></code></div>
+	</div>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+<div class="col-sm-2 my-3">
+	<a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#tree-1" role="button" aria-expanded="false" aria-controls="txt-0">Toggle Greenlandic dependency (graph)</a>
+</div>
+<div class="col-sm-10 my-3">
+	<div class="collapse" id="tree-1">
+		<div><h3>Greenlandic dependency (graph)</h3><span id="svg-1"></span></div>
+	</div>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+<div class="col-sm-2 my-3">
+	<a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#txt-1" role="button" aria-expanded="false" aria-controls="txt-0">Toggle Greenlandic dependency (text)</a>
+</div>
+<div class="col-sm-10 my-3">
+	<div class="collapse" id="txt-1">
+		<div><h3>Greenlandic dependency (text)</h3><code></code></div>
+	</div>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+<div class="col-sm-2 my-3">
+	<a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#txt-0" role="button" aria-expanded="false" aria-controls="txt-0">Toggle Greenlandic analysis text</a>
+</div>
+<div class="col-sm-10 my-3">
+	<div class="collapse" id="txt-0">
+		<div><h3>Greenlandic analysis text</h3><code></code></div>
+	</div>
+</div>
+</div>
+</span>
+
+<div class="row bottom-spacer">
+</div>
+
+</div>
+
+</body>
+</html>
