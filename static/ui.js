@@ -201,7 +201,12 @@ function dep2svg(where, cg) {
 			.classed('wform', true)
 			.text(m[1]));
 
-		let ts = m[2].replace(/("[^"]+"\S*) /g, '$1\n').replace(/ (#\d+->\d+)/, '\n$1').replace(/ ([A-Z]{2,})/g, '\n$1').replace(/ (@)/, '\n$1').split(/\n/);
+		let ts = m[2];
+		ts = ts.replace(/("[^"]+"\S*) /g, '\n$1\n');
+		ts = ts.replace(/ (#\d+->\d+)/, '\n$1');
+		ts = ts.replace(/ ([A-Z]{2,})/g, '\n$1');
+		ts = ts.replace(/ (@)/, '\n$1');
+		ts = $.trim(ts).split(/\n+/);
 		for (let j=0 ; j<ts.length ; ++j) {
 			let text = g.append('text')
 				.text(ts[j])

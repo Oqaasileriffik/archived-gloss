@@ -5,9 +5,9 @@ use warnings;
 use utf8;
 
 BEGIN {
-	$| = 1;
-	binmode(STDIN, ':encoding(UTF-8)');
-	binmode(STDOUT, ':encoding(UTF-8)');
+   $| = 1;
+   binmode(STDIN, ':encoding(UTF-8)');
+   binmode(STDOUT, ':encoding(UTF-8)');
 }
 use open qw( :encoding(UTF-8) :std );
 use feature qw(unicode_strings current_sub);
