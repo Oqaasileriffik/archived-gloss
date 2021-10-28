@@ -67,6 +67,7 @@ my $do_gloss = sub {
    my ($t) = @_;
    my @rv = ();
 
+   utf8::decode($t);
    file_put_contents("$tmpdir/ui-in.txt", $t);
    file_put_contents("$tmpdir/ui-cmd.txt", $cmd);
    `cat $tmpdir/ui-in.txt | $cmd >/dev/null 2>$tmpdir/ui-err.txt`;
@@ -106,7 +107,7 @@ my $app = sub {
 
    if (!$req->path_info || $req->path_info eq '/') {
       open my $fh, '<:raw', "$Bin/static/index.html" or die $!;
-      return [200, ['Content-Type' => 'text/html'], $fh];
+      return [200, ['Content-Type' => 'text/html; charset=UTF-8'], $fh];
    }
    elsif ($req->path_info eq '/callback') {
       return $handle_callback->($req);
