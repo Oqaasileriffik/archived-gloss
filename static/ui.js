@@ -345,6 +345,11 @@ function cb_gloss(rv) {
 	$('#output').show();
 	$('.collapse').addClass('show');
 
+	while (rv.output.length > 5) {
+		rv.output.shift();
+	}
+	rv.output.splice(2, 1);
+
 	for (let i=0 ; i<rv.output.length ; ++i) {
 		let t = rv.output[i];
 		$('#txt-'+i).find('code').text(t);

@@ -45,11 +45,12 @@ if (!$cmd) {
    die "Could not call '$opts{binary} --cmd'!\n";
 }
 
+$cmd =~ s/\s*\|\s*cg-sort\s*/ /g;
 my @cmds = split(/\|/, $cmd);
 
 my $tmpdir = File::Spec->tmpdir();
 for (my $i=0 ; $i<scalar(@cmds) ; ++$i) {
-   $cmds[$i] .= " 2> $tmpdir/ui-err-$i.txt | tee $tmpdir/ui-out-$i.txt";
+   $cmds[$i] .= " | cg-sort 2> $tmpdir/ui-err-$i.txt | tee $tmpdir/ui-out-$i.txt";
 }
 $cmd = join(' | ', @cmds);
 #print "Using pipe:\n  ".join(" | \\\n  ", @cmds)."\n";
